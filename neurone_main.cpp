@@ -19,12 +19,12 @@ int main()
 	double h = 0.1; 
 	double stop = 1000;
 	double start = 0;
-	double I1;
-	double I2;
+	double I;
 	double t1;
 	double t2;
 	double J = 0.1;
-	double d(0.5);
+
+	
 
 	string const valeurs_pot("valeurs.txt");
 	ofstream sortie(valeurs_pot.c_str());
@@ -34,9 +34,8 @@ int main()
 	cout << "Please insert a time of stop : ";
 	cin >> t2;
 	cout << "Please insert an external current for n1 : ";
-	cin >> I1;
-	cout << "Please insert an external current for n2 : ";
-	cin >> I2;
+	cin >> I;
+
 	t = t1;
 	
 	if (t1 >= start and t2 <= stop)
@@ -44,26 +43,27 @@ int main()
 	
 		while (t < t2)
 		{
-			//for (auto& neurone : neurones ) { // all neurones in system
 			if(sortie){
-			sortie << "n1 : " << n1.get_potential() << endl;
-			sortie << "n2 : " << n2.get_potential() << endl;
+				sortie << "n1 : " << n1.get_potential() << endl;
+				for (auto& target : n1.gettargets()) {
+				sortie << "n2 : " << target->get_potential() << endl;
+				}
 			}
 			else
 			cout << "Erreur";
 			
-			if (n1.update(t, I1, h)) { // impulse applied to one particular neuron, if spiking = true
+			if (n1.update(t, I, h)) { // impulse applied to one particular neuron, if spiking = true
 			
-				/*for (auto& target : n1.gettargets()){ //all the neighboors n1 has
-				sortie << "j'ai spiké" << endl;*/
-				n2.receive(t + d,J, h, I1); // will receive J 
+				for (auto& target : n1.gettargets()){ //all the neighboors n1 has
+				sortie << "j'ai spiké" << endl;
+				target->receive(t,J); // will receive J 
 				
 				}
+			}
 			
 		
-		
-		t+=h;	  
-		//}
+		t +=h;
+
 	 }
 	sortie.close();
 	
