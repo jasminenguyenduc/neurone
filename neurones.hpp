@@ -17,10 +17,9 @@ class Neurone
 		const double r_per = 0.1;
 		const double R = tau/C;
 		vector <Neurone*> targets;
-		double J= 0.1;
 		double V;
 		//double int_clock;
-		vector<double> buffer= {0,0,0,0,0};
+		
 
 		
 	public :
@@ -31,14 +30,15 @@ class Neurone
 		void set_potential(double v);
 		void addtarget (Neurone n);
 		void addneurone (Neurone n);
-		void receive (double t, double J);
+		vector <double> receive (double t, double J,vector <double> buffer);
 		vector <Neurone*> gettargets() const;
 		bool refractory (double t);
+		
 		//double get_int_clock () const;
 		//void set_clock (double h);
 };
 
-
+vector <double> update_buffer( Neurone* n, vector <double> buffer);
 
 
 

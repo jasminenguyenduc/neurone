@@ -45,24 +45,12 @@ bool Neurone::refractory (double t) {
 	}
 	
 } 
-void Neurone::receive (double t, double J)
+vector <double> Neurone::receive (double t, double J, vector <double> buffer)
 {
-	if (!buffer.empty() and buffer[4] != 0) {
-				
-		V+= buffer[4];	
-	}
-	for (size_t i(1); i < 5; ++i){
-				
-		buffer[i] = buffer[i-1];
-	}
-		
-	if (refractory(t)) {
-		buffer[0] = 0;
-	}
-	if (refractory(t) == false) {
-		buffer[0] = J;
-	}
-			
+
+	buffer[0] = J;
+
+	return buffer;
 	
 }
 
@@ -102,6 +90,27 @@ void Neurone:: set_clock (double h){
 	}
 	
 */
+vector <double> update_buffer(Neurone* n,  vector <double> buffer){
+	
+		if (!buffer.empty() and buffer[4] != 0) {
+					n->set_potential(n->get_potential() + buffer[4]);	
+				
+		}
+		/*
+		for (size_t i(0); i < 5; ++i){ // starts at 0 => buffer[5] = buffer[4], ... , buffer[1] = buffer[0]
+				
+			buffer[5-i] = buffer[5-i-1];
+		} */
+		
+		buffer[4] = buffer[3];
+		buffer[3] = buffer[2];
+		buffer[2] = buffer[1];
+		buffer[1] = buffer[0];
+		buffer[0] = 0;       
+		
+		return buffer;
+	
+}
 	
 Neurone :: Neurone()
 :spikes(0), V(V_ref)
