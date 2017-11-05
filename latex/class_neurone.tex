@@ -1,0 +1,134 @@
+\hypertarget{class_neurone}{}\section{Neurone Class Reference}
+\label{class_neurone}\index{Neurone@{Neurone}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_neurone_aaf4eaa15b62d4767ae4f523eb8b13b4a}{Neurone} ()
+\item 
+bool \hyperlink{class_neurone_a4eb0f77baa41d5f49c3e5e50abe19c68}{update} (double step, double h, double poisson)
+\item 
+double \hyperlink{class_neurone_a81f418a2929da23aa6122014e67e977a}{get\+Potential} () const 
+\item 
+void \hyperlink{class_neurone_af9a0ca4d5a2a020029fcb21b6c401669}{set\+Potential} (double v)
+\item 
+vector$<$ double $>$ \hyperlink{class_neurone_acea88a9694ccba14fc62b0fc4bffd41b}{add\+\_\+to\+\_\+buffer} (double J)
+\item 
+vector$<$ double $>$ \hyperlink{class_neurone_ac80cc9786bb14dfdde0ca81adec8a3ec}{update\+\_\+buffer} ()
+\item 
+void \hyperlink{class_neurone_a57969a7a7a0631ffd077196d210964ee}{add\+Target} (int target)
+\item 
+vector$<$ int $>$ \hyperlink{class_neurone_a168f0c14d1cde86301d2a7322a6def05}{get\+Targets} () const 
+\item 
+double \hyperlink{class_neurone_a00939e803852e0c94483ddf1c73ab74c}{get\+Spikes} () const 
+\item 
+void \hyperlink{class_neurone_ae4f57c275db9c37de0d7f2032992e2e7}{set\+\_\+i\+\_\+ext} (double i)
+\item 
+vector$<$ double $>$ \hyperlink{class_neurone_a9ceef3882d42416a36ce10cf50e35d04}{get\+\_\+spk\+\_\+time} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ double $>$ {\bfseries buffer}\hypertarget{class_neurone_a4dfeae178d25ce2324c0c3070a8a6dcc}{}\label{class_neurone_a4dfeae178d25ce2324c0c3070a8a6dcc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Neurone@{Neurone}!Neurone@{Neurone}}
+\index{Neurone@{Neurone}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{Neurone()}{Neurone()}}]{\setlength{\rightskip}{0pt plus 5cm}Neurone\+::\+Neurone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_neurone_aaf4eaa15b62d4767ae4f523eb8b13b4a}{}\label{class_neurone_aaf4eaa15b62d4767ae4f523eb8b13b4a}
+external input set at 0, but is used in the T\+E\+S\+Ts
+
+constructor 
+
+\subsection{Member Function Documentation}
+\index{Neurone@{Neurone}!add\+\_\+to\+\_\+buffer@{add\+\_\+to\+\_\+buffer}}
+\index{add\+\_\+to\+\_\+buffer@{add\+\_\+to\+\_\+buffer}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{add\+\_\+to\+\_\+buffer(double J)}{add_to_buffer(double J)}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ Neurone\+::add\+\_\+to\+\_\+buffer (
+\begin{DoxyParamCaption}
+\item[{double}]{J}
+\end{DoxyParamCaption}
+)}\hypertarget{class_neurone_acea88a9694ccba14fc62b0fc4bffd41b}{}\label{class_neurone_acea88a9694ccba14fc62b0fc4bffd41b}
+the first square in buffer will receive J, this is used for targets to receive J \index{Neurone@{Neurone}!add\+Target@{add\+Target}}
+\index{add\+Target@{add\+Target}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{add\+Target(int target)}{addTarget(int target)}}]{\setlength{\rightskip}{0pt plus 5cm}void Neurone\+::add\+Target (
+\begin{DoxyParamCaption}
+\item[{int}]{target}
+\end{DoxyParamCaption}
+)}\hypertarget{class_neurone_a57969a7a7a0631ffd077196d210964ee}{}\label{class_neurone_a57969a7a7a0631ffd077196d210964ee}
+Adds a target, which is a neuron that our neuron is connected to, so that it will receive J from our neuron \index{Neurone@{Neurone}!get\+\_\+spk\+\_\+time@{get\+\_\+spk\+\_\+time}}
+\index{get\+\_\+spk\+\_\+time@{get\+\_\+spk\+\_\+time}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{get\+\_\+spk\+\_\+time() const }{get_spk_time() const }}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ Neurone\+::get\+\_\+spk\+\_\+time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_neurone_a9ceef3882d42416a36ce10cf50e35d04}{}\label{class_neurone_a9ceef3882d42416a36ce10cf50e35d04}
+allows acces to spike times \index{Neurone@{Neurone}!get\+Potential@{get\+Potential}}
+\index{get\+Potential@{get\+Potential}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{get\+Potential() const }{getPotential() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Neurone\+::get\+Potential (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_neurone_a81f418a2929da23aa6122014e67e977a}{}\label{class_neurone_a81f418a2929da23aa6122014e67e977a}
+allows acces to potential \index{Neurone@{Neurone}!get\+Spikes@{get\+Spikes}}
+\index{get\+Spikes@{get\+Spikes}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{get\+Spikes() const }{getSpikes() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Neurone\+::get\+Spikes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_neurone_a00939e803852e0c94483ddf1c73ab74c}{}\label{class_neurone_a00939e803852e0c94483ddf1c73ab74c}
+allows access to spikes \index{Neurone@{Neurone}!get\+Targets@{get\+Targets}}
+\index{get\+Targets@{get\+Targets}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{get\+Targets() const }{getTargets() const }}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ Neurone\+::get\+Targets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_neurone_a168f0c14d1cde86301d2a7322a6def05}{}\label{class_neurone_a168f0c14d1cde86301d2a7322a6def05}
+allows acces to target \index{Neurone@{Neurone}!set\+\_\+i\+\_\+ext@{set\+\_\+i\+\_\+ext}}
+\index{set\+\_\+i\+\_\+ext@{set\+\_\+i\+\_\+ext}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{set\+\_\+i\+\_\+ext(double i)}{set_i_ext(double i)}}]{\setlength{\rightskip}{0pt plus 5cm}void Neurone\+::set\+\_\+i\+\_\+ext (
+\begin{DoxyParamCaption}
+\item[{double}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{class_neurone_ae4f57c275db9c37de0d7f2032992e2e7}{}\label{class_neurone_ae4f57c275db9c37de0d7f2032992e2e7}
+allows modification of external input \index{Neurone@{Neurone}!set\+Potential@{set\+Potential}}
+\index{set\+Potential@{set\+Potential}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{set\+Potential(double v)}{setPotential(double v)}}]{\setlength{\rightskip}{0pt plus 5cm}void Neurone\+::set\+Potential (
+\begin{DoxyParamCaption}
+\item[{double}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{class_neurone_af9a0ca4d5a2a020029fcb21b6c401669}{}\label{class_neurone_af9a0ca4d5a2a020029fcb21b6c401669}
+allows modification of potential \index{Neurone@{Neurone}!update@{update}}
+\index{update@{update}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{update(double step, double h, double poisson)}{update(double step, double h, double poisson)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Neurone\+::update (
+\begin{DoxyParamCaption}
+\item[{double}]{step, }
+\item[{double}]{h, }
+\item[{double}]{poisson}
+\end{DoxyParamCaption}
+)}\hypertarget{class_neurone_a4eb0f77baa41d5f49c3e5e50abe19c68}{}\label{class_neurone_a4eb0f77baa41d5f49c3e5e50abe19c68}
+updates neuron by moving the buffer, incrementing the potential if it isn\textquotesingle{}t refractory updates buffer
+
+if spiking -\/$>$ membrane potential becomes 0
+
+while refractory -\/$>$ membrane potential is 0
+
+uses formula, buffer and poisson to increment V if neuron is neither spiking or refractory \index{Neurone@{Neurone}!update\+\_\+buffer@{update\+\_\+buffer}}
+\index{update\+\_\+buffer@{update\+\_\+buffer}!Neurone@{Neurone}}
+\subsubsection[{\texorpdfstring{update\+\_\+buffer()}{update_buffer()}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ Neurone\+::update\+\_\+buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_neurone_ac80cc9786bb14dfdde0ca81adec8a3ec}{}\label{class_neurone_ac80cc9786bb14dfdde0ca81adec8a3ec}
+buffer receives a certain J and delivers it to neuron after D steps shifts the buffer vector one step thus deleting the last value, the first value becomes 0.
+
+... buffer\mbox{[}4\mbox{]} = buffer\mbox{[}3\mbox{]}; buffer\mbox{[}3\mbox{]} = buffer\mbox{[}2\mbox{]}; buffer\mbox{[}2\mbox{]} = buffer\mbox{[}1\mbox{]}; buffer\mbox{[}1\mbox{]} = buffer\mbox{[}0\mbox{]}; buffer\mbox{[}0\mbox{]} = 0;
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+neurones.\+hpp\item 
+neurones.\+cpp\end{DoxyCompactItemize}
